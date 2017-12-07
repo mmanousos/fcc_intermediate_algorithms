@@ -16,15 +16,15 @@ function sumAll(arr) {
   for (var i = smallest; i <= largest; i++) {
     newArray.push(i);
     console.log(newArray);
-  };
+  }
   
   // reduce array to single value
     var reducer = function(total, amount) {
       return total + amount;
-    }
+    };
     var sum = newArray.reduce(reducer, 0);
     return sum;
-};
+}
 
 sumAll([5, 10]);
 
