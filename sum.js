@@ -1,4 +1,34 @@
 
+function sumAll(arr) {
+
+  // Determine largest number in array
+  var largest = arr.reduce(function(a,b) {
+    return Math.max(a,b);
+  });
+
+  //Determine smallest number in array
+  var smallest = arr.reduce(function(a,b) {
+    return Math.min(a,b);
+  });
+  
+   // loop through to get all numbers between smallest and largest and push to new array
+  var newArray = []; 
+  for (var i = smallest; i <= largest; i++) {
+    newArray.push(i);
+    console.log(newArray);
+  };
+  
+  // reduce array to single value
+    var reducer = function(total, amount) {
+      return total + amount;
+    }
+    var sum = newArray.reduce(reducer, 0);
+    return sum;
+};
+
+sumAll([5, 10]);
+
+
 
 /*-- PSEUDOCODE --*/
 
