@@ -1,3 +1,24 @@
+
+/*-- PSEUDOCODE --*/
+
+// create new empty array to hold return values
+// loop through first array 
+    // assign first value to variable
+// use "indexOf" to find value in array. 
+// check variable from first array for matches
+        // if yes, cycle to next value in first array (if value is >= 0; -1 means not present in array)
+        // if no, use "slice" to get just that value?
+        // or push value to new array 
+        // reassign variable to next value in first array
+
+// repeat for second array checking against first
+
+// ("filter" could prevent need for "push" method)
+// (write using "push" first, then refactor using "filter"?)
+
+    // return new array
+
+
 /*-- ASSIGNMENT --*/
 /*
 Diff Two Arrays
