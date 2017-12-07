@@ -1,7 +1,14 @@
 
 
+/*-- PSEUDOCODE --*/
 
-
+/*
+Determine highest number in the array
+Determine lowest number in the array 
+Set up function to get all numbers between & including those numbers
+Add all the numbers together
+Return the value 
+*/
 
 
 /*-- ASSIGNMENT --*/
@@ -13,9 +20,9 @@ The lowest number will not always come first.
 
 Here are some helpful links:
 
-Math.max()
-Math.min()
-Array.prototype.reduce()
+Math.max(): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max
+Math.min(): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min
+Array.prototype.reduce(): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
 
 
 CHECKS: 
