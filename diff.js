@@ -1,3 +1,27 @@
+function diffArray(arr1, arr2) {
+  var newArr = [];
+  
+  for (var i = 0; i < arr1.length; i++) {
+    var index1 = arr1[i]; 
+    if (arr2.indexOf(index1) == -1) {
+      newArr.push(index1); 
+    }  
+  }
+
+  for (var j = 0; j < arr2.length; j++) {
+    var index2 = arr2[j]; 
+    if (arr1.indexOf(index2) == -1) {
+      newArr.push(index2); 
+    }  
+  }
+
+  return newArr;
+}
+
+diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+
+
+
 
 /*-- PSEUDOCODE --*/
 
