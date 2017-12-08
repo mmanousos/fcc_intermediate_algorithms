@@ -1,3 +1,45 @@
+function whatIsInAName(collection, source) {
+ var returnArray = [];
+ 
+ var getKeys = Object.keys(source); // creates array of keys for given object 
+console.log(getKeys);
+ for (var i = 0; i < getKeys.length; i++) {
+  var keyName = getKeys[i]; // gets name of key
+   console.log("I need to know if the object has " + keyName);
+  var keyValue = source[keyName]; // gets value of key
+   console.log("if it does, check if that value is " + keyValue);
+
+  for (var j = 0; j < collection.length; j++) { 
+   var doesContain = collection[j].hasOwnProperty(keyName); // checks true/false if that key exists in the passed array of objects
+  if (doesContain == true)  {
+   var ogValue = collection[j][keyName]; 
+    console.log(ogValue);
+    if (ogValue == keyValue) {
+        returnArray.push(collection[j]);
+    }
+  }
+ } 
+}
+ return returnArray;
+
+}
+
+whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
+// check if property (key) exists
+ // if yes, get value
+ // compare value against value of parameter 
+
+
+
+
+/*-- PSEUDOCODE --*/
+
+create new array
+Cycle through arrays of first argument to check if they have the key/value properties specifed with second argument. 
+ if yes, pull that entire array to new Array    
+ return new array
+
+
 /*-- ASSIGNMENT --*/
 /*
 Wherefore art thou
