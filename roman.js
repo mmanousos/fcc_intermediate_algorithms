@@ -1,3 +1,23 @@
+/*-- PSEUDOCODE --*/
+
+/* 
+hard code values 
+check how many digits are in the given parameter. 
+    use CharAt to check each digit? 
+Detailed if / switch function: 
+    check if it is below 4, = 4, = 5, above 5, = 9
+        below 4, get number and input that # of I; above 5, get (number - 5) and inpput that # of I after V. 
+        
+    if single digit    
+        return / break
+    if more digits, check digits individually. 
+        check if it is below 4, = 4, = 5, above 5, = 9
+            in 10s place, replace with X or L; in 100s place, with C or D; in 1000s place, with M.             
+    join results into single string. 
+    return string. 
+*/ 
+
+
 /*-- ASSIGNMENT --*/
 /*
 Roman Numeral Converter
@@ -6,6 +26,19 @@ Convert the given number into a roman numeral.
 All roman numerals answers should be provided in upper-case.
 
 Here are some helpful links:
+
+
+1 = I
+5 = V
+10 = X
+50 = L
+100 = C
+500 = D
+1000 = M
+
+4 = IV 
+40 = XL
+90 = XC
 
 Roman Numerals: http://www.mathsisfun.com/roman-numerals.html
 Array.prototype.splice(): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
