@@ -27,7 +27,7 @@ function checkDigit() {
           break;
   }
     if (numLength == 1) {
-        return output;
+        return output.join('');
         } else { 
             var j = string.charAt(numLength-2);
             switch (j) {
