@@ -50,13 +50,38 @@ function checkDigit() {
               case "9": output.unshift("XC");
                   break;
             }
-        } return output.join(''); 
-    }    
+            if (numLength == 2) {
+                return output.join(''); 
+              } else {
+                var k = string.charAt(numLength-3);
+                  switch (k) {
+                    case "1": output.unshift("C");
+                        break;
+                    case "2": output.unshift("CC");
+                        break;
+                    case "3": output.unshift("CCC"); 
+                        break;
+                    case "4": output.unshift("CD");
+                        break;
+                    case "5": output.unshift("D");
+                        break;
+                    case "6": output.unshift("DC");
+                        break; 
+                    case "7": output.unshift("DCC");
+                        break; 
+                    case "8": output.unshift("DCCC");
+                        break;
+                    case "9": output.unshift("CM");
+                        break;
+                  }
+              } return output.join('');
+            }
+        }    
 checkDigit();    
     
 };
 
-convertToRoman(36);
+convertToRoman(736);
 
 
 
