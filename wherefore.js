@@ -1,19 +1,51 @@
+/* cycles through source keys of each collection object before returning them. But only verifies value of final key before returning it. Need an additional check first. */
+
 function whatIsInAName(collection, source) {
  var returnArray = [];
  
- var getKeys = Object.keys(source); // creates array of keys for given object 
-console.log(getKeys);
+var getKeys = Object.keys(source); // creates array of keys for given object  
+
+for (var k = 0; k < collection.length; k++) { 
+ var check = collection[k];
+ console.log(check);
+// var tempArray = []; 
  for (var i = 0; i < getKeys.length; i++) {
   var keyName = getKeys[i]; // gets name of key
-   console.log("I need to know if the object has " + keyName);
   var keyValue = source[keyName]; // gets value of key
-   console.log("if it does, check if that value is " + keyValue);
+    var doesContain = check.hasOwnProperty(keyName);
+    if (doesContain == true) {
+      var hold = check;
+    } else {
+      var hold = null;
+    }
+ } if (hold != null)
+      var ogValue = check[keyName];
+      console.log(ogValue);
+      if (ogValue == keyValue) {
+        returnArray.push(hold);
+    }
+}
+ return returnArray;
+
+}
+
+whatIsInAName([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c": 2 }], { "a": 1, "c": 2 });
+
+
+/* Checks if either value is present, doesn't exclude by checking both before returning. */
+
+/*function whatIsInAName(collection, source) {
+ var returnArray = [];
+ 
+ var getKeys = Object.keys(source); // creates array of keys for given object 
+ for (var i = 0; i < getKeys.length; i++) {
+  var keyName = getKeys[i]; // gets name of key
+  var keyValue = source[keyName]; // gets value of key
 
   for (var j = 0; j < collection.length; j++) { 
    var doesContain = collection[j].hasOwnProperty(keyName); // checks true/false if that key exists in the passed array of objects
   if (doesContain == true)  {
    var ogValue = collection[j][keyName]; 
-    console.log(ogValue);
     if (ogValue == keyValue) {
         returnArray.push(collection[j]);
     }
@@ -25,19 +57,23 @@ console.log(getKeys);
 }
 
 whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
-// check if property (key) exists
- // if yes, get value
- // compare value against value of parameter 
+
+
 
 
 
 
 /*-- PSEUDOCODE --*/
 
-create new array
-Cycle through arrays of first argument to check if they have the key/value properties specifed with second argument. 
- if yes, pull that entire array to new Array    
- return new array
+// create new array
+// cycle through arrays of first argument to check if they have the key/value properties specifed with second argument. 
+    // check if property (key) exists
+     // if yes, get value
+     // compare value against value of parameter 
+        // if yes, pull that entire array to new Array    
+        // return new array
+ 
+ 
 
 
 /*-- ASSIGNMENT --*/
