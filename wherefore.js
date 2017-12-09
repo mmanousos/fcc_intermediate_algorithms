@@ -1,5 +1,36 @@
-/* cycles through source keys of each collection object before returning them. But only verifies value of final key before returning it. Need an additional check first. */
+/* Final solution - checks key value before passing object to "hold" variable so each pair value can be checked before final push to array */ 
 
+function whatIsInAName(collection, source) {
+ var returnArray = [];
+ 
+var getKeys = Object.keys(source); // creates array of keys for given object  
+
+for (var k = 0; k < collection.length; k++) {  // cycle through all objects in 'collection' array
+ var check = collection[k]; // sets particular object being examined as variable
+ for (var i = 0; i < getKeys.length; i++) { // cycle through keys of 'source' object
+  var keyName = getKeys[i]; // gets name of 'source' key to compare
+  var keyValue = source[keyName]; // gets value of 'source' key to compare
+    var doesContain = check.hasOwnProperty(keyName); // checks if 'source' key is present in 'collection' object being checked
+    if (doesContain == true) { // if key is present
+      var ogValue = check[keyName]; // compare the values of the keys
+      if (ogValue == keyValue) { // if values are the same
+        var hold = check; // set the entire object as a temporary variable
+      }
+    } else {    // if the key is not present
+      var hold = null; //set the temporary variable as null
+    }
+ } if (hold != null) { // if the temporary variable is valid after the entire 'collection' object has been checked for all the 'source' keys
+        returnArray.push(hold); // push the 'collection' object held in the temporary variable to the 'returnArray'
+    }
+}
+ return returnArray; // deliver the final result
+
+}
+
+whatIsInAName([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c": 2 }], { "a": 1, "c": 2 });
+
+/* cycles through source keys of each collection object before returning them. But only verifies value of final key before returning it. Need an additional check first. */
+/*
 function whatIsInAName(collection, source) {
  var returnArray = [];
  
@@ -30,7 +61,7 @@ for (var k = 0; k < collection.length; k++) {
 }
 
 whatIsInAName([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c": 2 }], { "a": 1, "c": 2 });
-
+*/
 
 /* Checks if either value is present, doesn't exclude by checking both before returning. */
 
