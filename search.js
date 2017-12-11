@@ -1,18 +1,42 @@
+/* refactored solution */
+
+function myReplace(str, before, after) {
+  var beforeFirst = before.charAt(0);
+  var afterFirst = after.charAt(0);
+    
+ function checkCap() {  
+    if (afterFirst == afterFirst.toLowerCase()) {
+      var afterFirstCap = afterFirst.toUpperCase();
+      var afterNew = after.replace(afterFirst, afterFirstCap);
+      after = afterNew;
+      return after; 
+    }    
+ }
+    
+ if (beforeFirst == beforeFirst.toUpperCase()) {
+    checkCap();
+ }
+    
+ var newStr = str.replace(before, after);
+ return newStr;
+
+}
+
+myReplace("His name is Tom", "Tom", "john");
+
+
+
 
 /* first draft of solution */
 
 function myReplace(str, before, after) {
   var beforeFirst = before.charAt(0);
   var afterFirst = after.charAt(0);
-  console.log(afterFirst);
   if (beforeFirst == beforeFirst.toUpperCase()) {
     if (afterFirst == afterFirst.toLowerCase()) {
       var afterFirstCap = afterFirst.toUpperCase();
-       console.log(afterFirstCap);
       var afterNew = after.replace(afterFirst, afterFirstCap);
-        console.log(afterNew);
       var newStr = str.replace(before, afterNew);
-        console.log(newStr);
       return newStr;
    }
   } else {
