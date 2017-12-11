@@ -1,5 +1,15 @@
 
-/*-- Assignment --*/
+/*-- PSEUDOCODE --*/
+
+// Check if argument starts with a vowel
+    // if yes, add 'way' to end and return
+    // if no, fetch first letter 
+        // pop from position 0
+        // add to last position 
+        // add 'ay' after new last letter
+        // return new term 
+
+/*-- ASSIGNMENT --*/
 
 /* 
 Pig Latin
