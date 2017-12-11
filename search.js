@@ -28,7 +28,7 @@ myReplace("His name is Tom", "Tom", "john");
 
 
 /* first draft of solution */
-
+/*
 function myReplace(str, before, after) {
   var beforeFirst = before.charAt(0);
   var afterFirst = after.charAt(0);
@@ -49,7 +49,7 @@ function myReplace(str, before, after) {
 }
 
 myReplace("A quick brown fox Jumped over the lazy dog", "Jumped", "leaped");
-
+*/
 
 /*-- PSEUDOCODE --*/
 
