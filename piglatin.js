@@ -1,25 +1,26 @@
 
 function translatePigLatin(str) {
-  var strFirst = str.charAt(0);
-    console.log("the first character is " + strFirst);
+  var strFirst = str.charAt(0); // get the first letter
   
   function checkVowel() {
-    var vowels = /[aeiouy]/gi.test(strFirst);
-     console.log(vowels);
-    if (vowels == true) {
-      str = str + 'way';
-      return str;
-    //} else {
+    var vowels = /[aeiouy]/gi.test(strFirst); // check if the first letter is a vowel
+    if (vowels == true) { // if first letter is a vowel
+      str = str + 'way'; // add 'way' to the end
+      return str; // return the new value
+    } else { // if first letter is not a vowel
+      var toArray = str.split(''); // make the string an array
+      toArray.shift(); // remove the first letter
+      toArray.push(strFirst); // add the first letter the end (held as a variable from outside of the function)
+      str = toArray.join('') + 'ay'; // merge the array back to a string and add 'ay' to the end
+      return str; // return the new value
     }
-  
-    
   }
-  checkVowel();  
+  checkVowel();  // run the function
   
-  return str;
+  return str; // return the final value
 }
 
-translatePigLatin("onsonant");
+translatePigLatin("consonant");
 
 
 /*-- PSEUDOCODE --*/
