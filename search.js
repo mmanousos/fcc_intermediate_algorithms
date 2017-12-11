@@ -17,8 +17,8 @@ function myReplace(str, before, after) {
     checkCap();
  }
     
- var newStr = str.replace(before, after);
- return newStr;
+ str = str.replace(before, after);
+ return str;
 
 }
 
