@@ -1,5 +1,15 @@
 
 
+/*-- PSEUDOCODE --*/
+
+// check case of first letter of first argument
+    // if capitalized, check case of first letter of second argument
+        // if not capitalized, capitalize
+        // else move on to next step
+    // else move on to next step
+// search string for first argument
+// replace with second argument (originally provided or newly capitalized)
+
 
 /*-- ASSIGNMENT --*/
 /*

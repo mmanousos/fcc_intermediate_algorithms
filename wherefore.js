@@ -91,9 +91,6 @@ whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: 
 
 
 
-
-
-
 /*-- PSEUDOCODE --*/
 
 // create new array
