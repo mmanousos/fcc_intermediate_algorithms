@@ -1,4 +1,27 @@
 
+function translatePigLatin(str) {
+  var strFirst = str.charAt(0);
+    console.log("the first character is " + strFirst);
+  
+  function checkVowel() {
+    var vowels = /[aeiouy]/gi.test(strFirst);
+     console.log(vowels);
+    if (vowels == true) {
+      str = str + 'way';
+      return str;
+    //} else {
+    }
+  
+    
+  }
+  checkVowel();  
+  
+  return str;
+}
+
+translatePigLatin("onsonant");
+
+
 /*-- PSEUDOCODE --*/
 
 // Check if argument starts with a vowel
