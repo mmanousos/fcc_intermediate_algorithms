@@ -1,5 +1,6 @@
-/* had the lazy operator ('?') in the wrong position for the RegEx so it wasn't breaking the phrase at the right point */
 
+/* had the lazy operator ('?') in the wrong position for the RegEx so it wasn't breaking the phrase at the right point */
+/*
 function translatePigLatin(str) {
   var strFirst = str.charAt(0);
   
@@ -18,6 +19,10 @@ function translatePigLatin(str) {
   checkVowel();  
   
   return str;
+}
+
+translatePigLatin("california");    
+*/
 
 /* works for two syllable words like 'glove' but not longer words like 'california' */
 /*
@@ -44,6 +49,75 @@ function translatePigLatin(str) {
 translatePigLatin("california");
 */
 
+/* Switch function doesn't work - returns vowel only for entire function, not back into a usable form for the rest of the function steps */ 
+
+function translatePigLatin(str) {
+  var strFirst = str.charAt(0);
+  
+  function checkVowel() {
+    var vowelsTest = /[aeiouy]/gi.test(strFirst);
+    if (vowelsTest == true) {
+      str = str + 'way';
+      return str;
+    } else {  
+        var arr = str.split('');
+        
+        function getVowel(arr) {
+          for (var i = 0; i<arr.length; i++) {
+            switch (arr[i]) {
+              case 'a': 
+                var firstVowel = arr[i];
+                return firstVowel;
+                break;
+              case 'e':
+                var firstVowel = arr[i];
+                return firstVowel;
+                break;
+              case 'i':
+                var firstVowel = arr[i];
+                return firstVowel;
+                break;
+              case 'o':
+                var firstVowel = arr[i];
+                return firstVowel;
+                break;
+              case 'u':
+                var firstVowel = arr[i];
+                return firstVowel;
+                break;
+              case 'y':
+                var firstVowel = arr[i];
+                return firstVowel;
+                break;
+            }
+          }
+        }  
+        
+        
+        getVowel(arr);
+        
+        
+      //  var firstVowelPos = arr.indexOf('a' || 'e' || 'i' || 'o' || 'u' || 'y');
+       // var vowels = /[aeiouy]/
+      //  var firstVowelPos = arr.indexOf(vowels);
+        var firstVowelPos = arr.indexOf(firstVowel);
+        var front = arr.splice(0, firstVowelPos);
+        var frontMerged = front.join('');
+        arr.push(frontMerged); 
+        var joined = arr.join('');
+        str = joined + 'ay';
+        return str;
+    }  
+  }
+  checkVowel();  
+  
+  return str;
+}
+
+translatePigLatin("glove"); 
+
+
+
 /*-- PSEUDOCODE (for first syllable solution) --*/
 
 // Check if argument starts with a vowel
@@ -56,7 +130,7 @@ translatePigLatin("california");
         // add 'ay' after new last letter
         // return new term 
 
-
+/*
 function translatePigLatin(str) {
   var strFirst = str.charAt(0); // get the first letter
   
