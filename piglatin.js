@@ -50,7 +50,7 @@ translatePigLatin("california");
 */
 
 /* Switch function doesn't work - returns vowel only for entire function, not back into a usable form for the rest of the function steps */ 
-
+/*
 function translatePigLatin(str) {
   var strFirst = str.charAt(0);
   
@@ -89,6 +89,52 @@ function translatePigLatin(str) {
                 var firstVowel = arr[i];
                 return firstVowel;
                 break;
+            }
+          }
+        }  
+        
+        
+        getVowel(arr);
+        
+        
+      //  var firstVowelPos = arr.indexOf('a' || 'e' || 'i' || 'o' || 'u' || 'y');
+       // var vowels = /[aeiouy]/
+      //  var firstVowelPos = arr.indexOf(vowels);
+        var firstVowelPos = arr.indexOf(firstVowel);
+        var front = arr.splice(0, firstVowelPos);
+        var frontMerged = front.join('');
+        arr.push(frontMerged); 
+        var joined = arr.join('');
+        str = joined + 'ay';
+        return str;
+    }  
+  }
+  checkVowel();  
+  
+  return str;
+}
+
+translatePigLatin("glove"); 
+
+
+/* standard 'for' loop with 'if' also doesn't work - returns only the first vowel */ 
+
+function translatePigLatin(str) {
+  var strFirst = str.charAt(0);
+  
+  function checkVowel() {
+    var vowelsTest = /[aeiouy]/gi.test(strFirst);
+    if (vowelsTest == true) {
+      str = str + 'way';
+      return str;
+    } else {  
+        var arr = str.split('');
+        
+        function getVowel(arr) {
+          for (var i = 0; i<arr.length; i++) {
+            if ((arr[i] == 'o') || (arr[i] == 'e')) {
+              var firstVowel = arr[i];
+              return firstVowel;
             }
           }
         }  
