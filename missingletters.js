@@ -1,4 +1,11 @@
 
+/*-- PSEUDOCODE --*/
+// get first character in string (set to variable)
+// get character code of this variable
+// get & check character code of following character 
+    // if it is only larger by 1, set following character as variable & move on to subsequent characters
+    // if not, add 1 to character code & return the corresponding character. 
+
 /*-- ASSIGNMENT --*/
 /* Missing letters
 Find the missing letter in the passed letter range and return it.
@@ -14,3 +21,4 @@ fearNotLetter("abce") should return "d".
 fearNotLetter("abcdefghjklmno") should return "i".
 fearNotLetter("bcd") should return undefined.
 fearNotLetter("yz") should return undefined.
+*/
