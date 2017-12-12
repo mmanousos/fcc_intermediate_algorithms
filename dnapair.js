@@ -1,3 +1,16 @@
+
+
+/*-- PSEUDOCODE --*/
+
+// create array to return final results
+// split string into it's own array 
+// check each element of array:
+    // 1 - pull element into unique array
+    // 2 - check value of array 
+    // 3 - match element with it's pair (push pair character to unique array)
+    // 4 - push unique array into return array
+    // 5 - cycle to next element of string array
+
 /*-- ASSIGNMENT --*/
 /*
 DNA Pairing
@@ -10,8 +23,6 @@ Return the provided character as the first element in each array.
 For example, for the input GCG, return [["G", "C"], ["C","G"],["G", "C"]]
 
 The character and its pair are paired up in an array, and all the arrays are grouped into one encapsulating array.
-
-Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.
 
 Here are some helpful links:
 
