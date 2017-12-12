@@ -1,4 +1,31 @@
+/*doubt this is the most advanced way to accomplish this but it works */ 
 
+function pairElement(str) {
+  var returnArray = [];
+  var checkArray = str.split('');
+  for (var i = 0; i < checkArray.length; i++) {
+    var newArray = [];
+    newArray.push(checkArray[i]);
+    switch (checkArray[i]) {
+      case 'G': 
+        newArray.push('C');
+        break;
+      case 'C': 
+        newArray.push('G');
+        break;
+      case 'A':
+        newArray.push('T');
+        break;
+      case 'T':
+        newArray.push('A');
+        break;
+    }
+    returnArray.push(newArray);
+  }
+  return returnArray;
+}
+
+pairElement("ACTG");
 
 /*-- PSEUDOCODE --*/
 
