@@ -1,5 +1,26 @@
-/* works for two syllable words like 'glove' but not longer words like 'california' */
+/* had the lazy operator ('?') in the wrong position for the RegEx so it wasn't breaking the phrase at the right point */
 
+function translatePigLatin(str) {
+  var strFirst = str.charAt(0);
+  
+  function checkVowel() {
+    var vowelsTest = /[aeiouy]/gi.test(strFirst);
+    if (vowelsTest == true) {
+      str = str + 'way';
+      return str;
+    } else {      
+        var terms = /(\w+?)[aeiouy](\w+)/; // splits word at first vowel
+        var firstVowel = str.match(/[aeiouy]/); // captures first vowel into a variable
+        var newStr = str.replace(terms, '$2$1'); // switches position of first and second parts of the word (not including vowel)
+        str = firstVowel[0] + newStr + 'ay'; // adds vowel to the front of the word and 'ay' to the end. 
+    }  
+  }
+  checkVowel();  
+  
+  return str;
+
+/* works for two syllable words like 'glove' but not longer words like 'california' */
+/*
 function translatePigLatin(str) {
   var strFirst = str.charAt(0);
   
@@ -21,7 +42,7 @@ function translatePigLatin(str) {
 }
 
 translatePigLatin("california");
-
+*/
 
 /*-- PSEUDOCODE (for first syllable solution) --*/
 
