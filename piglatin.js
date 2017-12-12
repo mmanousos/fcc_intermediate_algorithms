@@ -1,6 +1,6 @@
-
+/* simple solution - doesn't convert to array at all. uses RegEx to find first vowel and manipulate other consonants around it.*/
 /* had the lazy operator ('?') in the wrong position for the RegEx so it wasn't breaking the phrase at the right point */
-/*
+
 function translatePigLatin(str) {
   var strFirst = str.charAt(0);
   
@@ -22,7 +22,7 @@ function translatePigLatin(str) {
 }
 
 translatePigLatin("california");    
-*/
+
 
 /* works for two syllable words like 'glove' but not longer words like 'california' */
 /*
@@ -118,7 +118,7 @@ translatePigLatin("glove");
 
 
 /* standard 'for' loop with 'if' also doesn't work - returns only the first vowel */ 
-
+/*
 function translatePigLatin(str) {
   var strFirst = str.charAt(0);
   
@@ -161,7 +161,7 @@ function translatePigLatin(str) {
 }
 
 translatePigLatin("glove"); 
-
+*/
 
 
 /*-- PSEUDOCODE (for first syllable solution) --*/
