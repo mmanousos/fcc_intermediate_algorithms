@@ -1,3 +1,40 @@
+/* works for two syllable words like 'glove' but not longer words like 'california' */
+
+function translatePigLatin(str) {
+  var strFirst = str.charAt(0);
+  
+  function checkVowel() {
+    var vowelsTest = /[aeiouy]/gi.test(strFirst);
+    if (vowelsTest == true) {
+      str = str + 'way';
+      return str;
+    } else {      
+        var terms = /(\w+)[aeiouy?](\w+)/; // splits word at first vowel
+        var firstVowel = str.match(/[aeiouy?]/); // captures first vowel into a variable
+        var newStr = str.replace(terms, '$2$1'); // switches position of first and second parts of the word (not including vowel)
+        str = firstVowel[0] + newStr + 'ay'; // adds vowel to the front of the word and 'ay' to the end. 
+    }  
+  }
+  checkVowel();  
+  
+  return str;
+}
+
+translatePigLatin("california");
+
+
+/*-- PSEUDOCODE (for first syllable solution) --*/
+
+// Check if argument starts with a vowel
+    // if yes, add 'way' to end and return
+
+    // if no, fetch indexOf first vowel 
+        // create variable to hold characters up to first vowel 
+        // (for loop to pull those first characters off using shift?)
+        // add to last position 
+        // add 'ay' after new last letter
+        // return new term 
+
 
 function translatePigLatin(str) {
   var strFirst = str.charAt(0); // get the first letter
@@ -23,12 +60,13 @@ function translatePigLatin(str) {
 translatePigLatin("consonant");
 
 
-/*-- PSEUDOCODE --*/
+/*-- PSEUDOCODE (for first character solution) --*/
 
 // Check if argument starts with a vowel
     // if yes, add 'way' to end and return
+
     // if no, fetch first letter 
-        // pop from position 0
+        // remove position 0
         // add to last position 
         // add 'ay' after new last letter
         // return new term 
