@@ -1,4 +1,19 @@
 
+function uniteUnique(arr) {
+ var arrNew = [];
+  for (var i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
+    if (arrNew.indexOf(arr[i]) == -1) {
+     arrNew.push(arr[i]);
+    }
+  }  
+    
+ return arrNew;
+}
+
+uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
+
+
 /*-- PSEUDOCODE --*/
 
 /* example of reduce() method
