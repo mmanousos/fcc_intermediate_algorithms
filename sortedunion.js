@@ -1,13 +1,16 @@
 
 function uniteUnique(arr) {
  var arrNew = [];
-  for (var i = 0; i < arr.length; i++) {
-    console.log(arr[i]);
-    if (arrNew.indexOf(arr[i]) == -1) {
-     arrNew.push(arr[i]);
+  for (var i = 0; i < arguments.length; i++) {
+    var currentArr = arguments[i];
+    for (var j = 0; j < currentArr.length; j++) {
+      console.log(currentArr[j]);
+    if (arrNew.indexOf(currentArr[j]) == -1) {
+     arrNew.push(currentArr[j]);
     }
+   }
   }  
-    
+  console.log(arrNew);  
  return arrNew;
 }
 
