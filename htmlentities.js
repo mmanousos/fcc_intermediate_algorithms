@@ -1,4 +1,11 @@
 
+/*-- PSEUDOCODE --*/
+
+// create object with HTML entity pairs for given special characters
+// search for said characters in argument string (using RegEx)
+// combine with 'replace' method to insert appropriate HTML entity code
+// return converted string
+
 
 /*-- ASSIGNMENT --*/
 

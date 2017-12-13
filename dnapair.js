@@ -27,6 +27,22 @@ function pairElement(str) {
 
 pairElement("ACTG");
 
+/* fcc intermediate solution using 'map' method */
+*function pairElement(str) {
+  var pairs = {
+    G: 'C',
+    C: 'G',
+    A: 'T',
+    T: 'A'
+  };
+  return str.split('').map(function(element) {
+    return [element, pairs[element]];
+  });
+}
+
+pairElement("GCG");
+
+
 /*-- PSEUDOCODE --*/
 
 // create array to return final results
