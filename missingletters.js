@@ -1,3 +1,22 @@
+/* A solution */
+
+function fearNotLetter(str) {
+  for (var i = 0; i<str.length-1; i++) {
+    var char = str.charCodeAt(i);
+    var check = str.charCodeAt(i+1);
+    if (check > char+1) {
+      str = String.fromCharCode(char+1);
+    } 
+  } 
+  if (str.length > 1) {
+      str = undefined;
+    }
+    
+  return str;
+}
+
+fearNotLetter("abcdefghjklmno");
+
 
 /*-- PSEUDOCODE --*/
 // get first character in string (set to variable)
