@@ -1,4 +1,5 @@
 /* A solution */
+/* would be more refined by simply returning directly from within function & returning 'undefined' otherwise */
 
 function fearNotLetter(str) {
   for (var i = 0; i<str.length-1; i++) {
@@ -17,6 +18,21 @@ function fearNotLetter(str) {
 
 fearNotLetter("abcdefghjklmno");
 
+
+
+/* refactored solution after looking at fcc solution */ 
+/* function fearNotLetter(str) {
+  for (var i = 0; i<str.length-1; i++) {
+    var char = str.charCodeAt(i);
+    if (char+1 !== str.charCodeAt(i+1)) {
+      return String.fromCharCode(char+1);
+    } 
+  } 
+  return undefined;
+}
+
+fearNotLetter("abc");
+*/ 
 
 /*-- PSEUDOCODE --*/
 // get first character in string (set to variable)
