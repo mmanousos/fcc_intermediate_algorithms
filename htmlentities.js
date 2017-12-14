@@ -26,7 +26,7 @@ function convertHTML(str) {
   };
   //Use map function to return a filtered str with all entities changed automatically.
   return str.split('').map(function(entity){
-    return htmlEntities[entity] || entity;
+    return htmlEntities[entity] || entity; // returns either switched value or original value if it's unchanged
   }).join('');
 }
 

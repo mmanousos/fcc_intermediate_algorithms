@@ -1,4 +1,11 @@
 
+/*-- PSEUDOCODE --*/
+
+// use RegEx to search for any spaces, underscores, or capital letters
+    // replace spaces or underscores with a dash
+    // if capital letter is not preceded by a space, add a dash
+// convert all to lowercase 
+    
 
 /*-- ASSIGNMENT --*/
 
