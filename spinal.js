@@ -1,7 +1,7 @@
 
 function spinalCase(str) {
  var capReplace = str.replace(/([A-Z])/g, ' $1').trim(); // finds capitalized letters and adds a space in front of them, retaining the original letter, and trims off extra at the front or the back
- var kebab = capReplace.replace(/[_\s]{1,15}/g, '-'); // replaces underscores or spaces, from 1 to 15 of them, with dashes
+ var kebab = capReplace.replace(/[_\s]+/g, '-'); // replaces underscores or spaces, even if there are more than 1, with dashes
  str = kebab.toLowerCase();    // converts entire string to lowercase
  return str;
 }
