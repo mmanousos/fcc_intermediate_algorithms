@@ -1,4 +1,46 @@
 
+function convertHTML(str) {
+ var Char = { // creates object to define replacement values
+  '"' : '&quot;', 
+  "'": '&apos;',
+  '&': '&amp;',
+  '<': '&lt;',
+  '>': '&rt;'
+ };
+   
+ var specialChar = str.match(/["'&<>]/g); // searches for instances of characters anywhere in the string & saves them into an array
+ var newStr = ''; // new empty string
+ for (var i = 0; i< specialChar.length; i++) { // cycles through the array of character instances
+  var getChar = specialChar[i]; // gets the character
+  var replaceChar = Char[getChar]; // finds that character in the Char object and saves its value to a variable
+  newStr += replaceChar; // adds the variable to the new string
+ }
+  return newStr;
+}
+
+convertHTML("Dolce & Gabbana");
+
+/* -- Documentation --*/ 
+Jon Duckett's book: replace() (String object) 128-130, 406-7, 562-3
+     
+     
+In this example, all occurrences of capital letters in the string are converted to lower case, and a hyphen is inserted just before the match location. The important thing here is that additional operations are needed on the matched item before it is given back as a replacement.
+
+The replacement function accepts the matched snippet as its parameter, and uses it to transform the case and concatenate the hyphen before returning.
+
+function styleHyphenFormat(propertyName) {
+  function upperToHyphenLower(match, offset, string) {
+    return (offset > 0 ? '-' : '') + match.toLowerCase();
+  }
+  return propertyName.replace(/[A-Z]/g, upperToHyphenLower);
+}
+Given styleHyphenFormat('borderTop'), this returns 'border-top'.
+
+Because we want to further transform the result of the match before the final substitution is made, we must use a function. This forces the evaluation of the match prior to the toLowerCase() method. If we had tried to do this using the match without a function, the toLowerCase() would have no effect.
+
+
+
+
 /*-- PSEUDOCODE --*/
 
 // create object with HTML entity pairs for given special characters
