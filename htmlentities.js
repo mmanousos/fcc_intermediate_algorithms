@@ -9,11 +9,12 @@ function convertHTML(str) {
  };
    
  var specialChar = str.match(/["'&<>]/g); // searches for instances of characters anywhere in the string & saves them into an array
- var newStr = ''; // new empty string
+ // var newStr = ''; // new empty string
  for (var i = 0; i< specialChar.length; i++) { // cycles through the array of character instances
   var getChar = specialChar[i]; // gets the character
   var replaceChar = Char[getChar]; // finds that character in the Char object and saves its value to a variable
-  newStr += replaceChar; // adds the variable to the new string
+  // newStr += replaceChar; // adds the variable to the new string
+  var newStr = str.replace(specialChar[i], replaceChar); // replaces the original character
  }
   return newStr;
 }
