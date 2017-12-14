@@ -1,4 +1,13 @@
 
+function spinalCase(str) {
+ var kebab = str.replace(/[\s_]/g, '-'); 
+ str = kebab.toLowerCase();    
+ return str;
+}
+
+spinalCase('This Is Spinal Tap');
+
+
 /*-- PSEUDOCODE --*/
 
 // use RegEx to search for any spaces, underscores, or capital letters
