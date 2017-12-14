@@ -1,11 +1,12 @@
 
 function spinalCase(str) {
- var kebab = str.replace(/[\s_]/g, '-'); 
- str = kebab.toLowerCase();    
+ var capReplace = str.replace(/([A-Z])/g, ' $1').trim(); // finds capitalized letters and adds a space in front of them, retaining the original letter, and trims off extra at the front or the back
+ var kebab = capReplace.replace(/[\s_]/g, '-');  // replaces spaces or underscores with dashes
+ str = kebab.toLowerCase().replace(/\-+/g, '-');   // lowercase and replaces any extra dashes with a single dash  
  return str;
 }
 
-spinalCase('This Is Spinal Tap');
+spinalCase("thisIsSpinalTap");
 
 
 /*-- PSEUDOCODE --*/
