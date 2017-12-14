@@ -1,25 +1,18 @@
 
+/* solution based on details from fcc's intermediate solution */ 
+/* Seems really inelegant (though it doesn't require much processing power - only 4 steps for a single replacement)
+/* I really dislike that if you have the apostrophe in the first position, it inserts an additional ampersand into the return value. */ 
+
 function convertHTML(str) {
- var Char = { // creates object to define replacement values
-  '"' : '&quot;', 
-  "'": '&apos;',
-  '&': '&amp;',
-  '<': '&lt;',
-  '>': '&rt;'
- };
-   
- var specialChar = str.match(/["'&<>]/g); // searches for instances of characters anywhere in the string & saves them into an array
- // var newStr = ''; // new empty string
- for (var i = 0; i< specialChar.length; i++) { // cycles through the array of character instances
-  var getChar = specialChar[i]; // gets the character
-  var replaceChar = Char[getChar]; // finds that character in the Char object and saves its value to a variable
-  // newStr += replaceChar; // adds the variable to the new string
-  var newStr = str.replace(specialChar[i], replaceChar); // replaces the original character
- }
-  return newStr;
+
+ var newStr = str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, "&apos;"); 
+
+return newStr;
 }
 
-convertHTML("Dolce & Gabbana");
+convertHTML("Dolce & Gabbana");    
+    
+
 
 /* -- Documentation --*/ 
 Jon Duckett's book: replace() (String object) 128-130, 406-7, 562-3
