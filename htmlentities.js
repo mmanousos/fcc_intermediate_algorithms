@@ -11,7 +11,29 @@ return newStr;
 }
 
 convertHTML("Dolce & Gabbana");    
-    
+
+
+/* fcc's Advanced solution */
+/* similar to my original logic but I was trying to use replace instead of map so it would have never worked.*/ 
+function convertHTML(str) {
+  // Use Object Lookup to declare as many HTML entities as needed.
+  var htmlEntities = {
+    '&':'&amp;',
+    '<':'&lt;',
+    '>':'&gt;',
+    '\"':'&quot;',
+    '\'':"&apos;"
+  };
+  //Use map function to return a filtered str with all entities changed automatically.
+  return str.split('').map(function(entity){
+    return htmlEntities[entity] || entity;
+  }).join('');
+}
+
+// test here
+convertHTML("Dolce & Gabbana");
+
+
 
 
 /* -- Documentation --*/ 
