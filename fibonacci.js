@@ -1,5 +1,14 @@
 
 
+/*-- PSEUDOCODE --*/
+
+// cycle through arguments <= argument (start with 1, max being argument #)
+// get fib number (add current number to number before it)
+// check if it is odd (if # divided by 2 leaves a remainder) & if so, map it to an array
+// reduce array to single value
+
+
+
 /*-- ASSIGNMENT --*/
 
 Sum All Odd Fibonacci Numbers
@@ -11,6 +20,7 @@ For example, sumFibs(10) should return 10 because all odd Fibonacci numbers less
 
 Here are some helpful links:
 
+Fibonacci Number: https://en.wikipedia.org/wiki/Fibonacci_number
 Remainder: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Remainder
 
 sumFibs(1) should return a number.
