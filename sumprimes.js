@@ -20,7 +20,7 @@ function sumPrimes(num) {
        return (( el % p !== 0 ) || ( el === p));
      });
    } arr = arrFiltered;
-  } return arrFiltered;
+  } 
  }
  
  getPrimes(); 
@@ -29,12 +29,12 @@ function sumPrimes(num) {
     return value += sum; 
  }, 0);
  
- return arr;
+ return arr - 1;
     
     
 }
 
-sumPrimes(20);
+sumPrimes(10);
 
 
 /*-- PSEUDOCODE --*/
