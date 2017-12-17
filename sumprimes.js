@@ -1,4 +1,42 @@
 
+function sumPrimes(num) {
+ 
+ var arr = [];
+ function getNumbers() {
+   for (var i = 1; i<= num; i++) {
+     var arrNumbers = arr.push(i);
+   } 
+ }
+ getNumbers(); 
+ 
+ var top = Math.max.apply(null, arr);
+ var min = 1;
+ 
+ function getPrimes() {
+ for (var p = 2; p <= top; p++) {
+   var loc = arr.indexOf(p);
+   if ((loc > 0) && (arr[loc] > min)) {
+     var arrFiltered = arr.filter(function(el, loc) {
+       return (( el % p !== 0 ) || ( el === p));
+     });
+   } arr = arrFiltered;
+  } return arrFiltered;
+ }
+ 
+ getPrimes(); 
+ 
+ arr = arr.reduce(function(value, sum) {
+    return value += sum; 
+ }, 0);
+ 
+ return arr;
+    
+    
+}
+
+sumPrimes(20);
+
+
 /*-- PSEUDOCODE --*/
 
 // loop through numbers up to and including argument
