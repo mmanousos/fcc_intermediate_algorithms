@@ -1,4 +1,44 @@
 
+/* Cleaned up filterArray function to filter the entire array to only primes */
+
+
+function sumPrimes(num) {
+ 
+ var arr = [];
+ function getNumbers() {
+   for (var i = 2; i<= num; i++) {
+     var arrNumbers = arr.push(i);
+   } return arr; 
+ }
+ getNumbers(); 
+ 
+ var arrPrimes = []; 
+ function filterArray() {
+   for (var i=0; i<arr.length; i++) {
+     var p = arr[i];
+     var arrFiltered = arr.filter(function(el) {
+       return ((el === p) || (el % p !== 0));
+     }); 
+     arr = arrFiltered;
+    }
+   } 
+   filterArray();
+   
+   
+  var sum = arr.reduce(function(value,sum) {
+   return value+sum;
+  }); 
+   
+  return sum;
+
+}
+
+sumPrimes(30);
+
+
+
+/* works but isn't elegant and uses variables out of scope */ 
+
 function sumPrimes(num) {
  
  var arr = [];
@@ -46,7 +86,8 @@ sumPrimes(10);
           // or simply add it to variable that will be returned after the loop ends. 
 
 
-/* Sieve of Eratosthenes (method for filtering out primes) */ 
+/* Sieve of Eratosthenes (method for filtering out primes) */
+/* https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes */ 
 
 To find all the prime numbers less than or equal to a given integer n by Eratosthenes' method:
 
