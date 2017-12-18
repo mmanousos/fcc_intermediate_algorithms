@@ -1,4 +1,13 @@
 
+/*-- PSEUDOCODE --*/
+
+// get an array of multiples of first two parameters
+// filter by common multiples
+// get integers between two parameters
+// filter array of common multiples by those divisible by integers between two parameters
+// return after all interstital integers have been checked
+
+
 /*-- ASSIGNMENT --*/
 
 Smallest Common Multiple
