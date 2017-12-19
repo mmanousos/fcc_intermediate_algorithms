@@ -29,6 +29,36 @@ function sumAll(arr) {
 sumAll([5, 10]);
 
 
+/* fcc intermediate solution */ 
+/* much cleaner using single array (from largest to smallest) & iterating over that */
+/* If you sort the array from greatest to smallest, then you can use the first two numbers as a first check for the smallest common multiple. This is because they are more likely to be the smallest common multiple than the lower numbers. (multiply first two largest, check if others divide evenly, if not, increase factor of multiplication & repeat.) */
+
+function smallestCommons(arr) {
+    var range = [];
+    for (var i = Math.max(arr[0], arr[1]); i >= Math.min(arr[0], arr[1]); i--) {
+    range.push(i);
+    }
+
+    // can use reduce() in place of this block
+    var lcm = range[0];
+    for (i = 1; i < range.length; i++) {
+    var GCD = gcd(lcm, range[i]);
+    lcm = (lcm * range[i]) / GCD;
+    }
+    return lcm;
+
+    function gcd(x, y) {    // Implements the Euclidean Algorithm
+    if (y === 0)
+        return x;
+    else
+        return gcd(y, x%y);
+    }
+}
+
+// test here
+smallestCommons([1,5]);
+
+
 
 /*-- PSEUDOCODE --*/
 
