@@ -1,4 +1,10 @@
 
+/*-- PSEUDOCODE --*/
+
+// check first element of argument array against logic of argument function
+    // if true, return full array
+    // if not true, remove (shift) first & move on to next element to check
+// return remaining array as soon as first element is true
 
 /*-- ASSIGNMENT --*/
 
