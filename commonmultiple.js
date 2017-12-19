@@ -1,3 +1,92 @@
+/* slightly faster because it filters the larger integers first */ 
+
+function smallestCommons(arr) {
+   //Determine smallest number in argument
+  var smallest = arr.reduce(function(a,b) {
+    return Math.min(a,b);
+  });
+  
+    // Determine largest number in array
+  var largest = arr.reduce(function(a,b) {
+    return Math.max(a,b);
+  });
+  
+   // loop through to get all numbers between smallest and largest and push to new array
+  var newArray = []; 
+  for (var i = smallest+1; i <= largest-1; i++) {
+    newArray.push(i);
+  } console.log(newArray);
+ 
+  // Create array of common multiples
+  var array = [];
+  for (var j = 1; j<100; j++) {
+    if ((j*smallest) % largest === 0) {
+    array.push(j*smallest);  
+    }
+  }
+  console.log(array)
+  
+  function filterArray() {
+   var k = (newArray.length - 1);       
+   for (k; k >= 0; k--) {
+     var m = newArray[k];
+     var arrFiltered = array.filter(function(el) {
+       return (el % m === 0);
+     }); 
+     array = arrFiltered;
+    } return array;
+   } 
+   filterArray();
+  
+  return array[0];
+}
+
+smallestCommons([1,4]);
+
+/* functional solution but likely not the most elegant */
+
+
+function smallestCommons(arr) {
+   //Determine smallest number in argument
+  var smallest = arr.reduce(function(a,b) {
+    return Math.min(a,b);
+  });
+  
+    // Determine largest number in array
+  var largest = arr.reduce(function(a,b) {
+    return Math.max(a,b);
+  });
+  
+   // loop through to get all numbers between smallest and largest and push to new array
+  var newArray = []; 
+  for (var i = smallest+1; i <= largest-1; i++) {
+    newArray.push(i);
+  } console.log(newArray);
+ 
+  // Create array of common multiples
+  var array = [];
+  for (var j = 1; j<8000000; j++) {
+    if ((j*smallest) % largest === 0) {
+    array.push(j*smallest);
+    }
+  }
+  
+  function filterArray() {
+   for (var k = 0; k<newArray.length; k++) {
+     var m = newArray[k];
+     var arrFiltered = array.filter(function(el) {
+       return (el % m === 0);
+     }); 
+     array = arrFiltered;
+    } return array;
+   } 
+   filterArray();
+  
+  return array[0];
+}
+
+smallestCommons([1,13]);
+
 
 /*-- PSEUDOCODE --*/
 
