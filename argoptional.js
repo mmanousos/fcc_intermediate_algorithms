@@ -1,8 +1,9 @@
 
+
 /* satisifes all parts of assignment */ 
 
 function addTogether() {
- if (arguments[0] != 'number') {
+ if (typeof arguments[0] != 'number') {
   return undefined;
  } else if ((arguments[1] != null) && (typeof arguments[1] == 'number')) {
   var sum = arguments[0] + arguments[1];	
