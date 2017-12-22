@@ -25,7 +25,26 @@ function truthCheck(collection, pre) {
 truthCheck([{"single": "double"}, {"single": NaN}], "single");
 
 
+/* fcc intermediate solution */
+/* very cleanly checks both that the element has the property and that the value of the property is true*/ 
 
+function truthCheck(collection, pre) {
+  return collection.every(function (element) {
+    return element.hasOwnProperty(pre) && Boolean(element[pre]);
+  });
+}
+
+// test here
+truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex");
+
+/* fcc advanced solution */ 
+/* infinitely more streamlined but uses notation I'm not familiar with */
+
+function truthCheck(collection, pre) {
+  return collection.every(obj => obj[pre]);
+}
+
+truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex");
 
 
 
