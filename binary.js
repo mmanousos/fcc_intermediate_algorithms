@@ -1,11 +1,11 @@
 
 function binaryAgent(str) {
   var strNew = ""; 
-  var arr = str.split(' ');
+  var arr = str.split(' '); // splits the binary string into discrete units to easily check
   
   for (var i = 0; i < arr.length; i++) {
-   var val = String.fromCharCode(parseInt(arr[i], 2));
-   strNew += val;
+   var val = String.fromCharCode(parseInt(arr[i], 2)); // parseInt converts the binary into decimal, fromCharCode converts it to a letter
+   strNew += val; // adds the letter to the string
    } 
   return strNew;
 
@@ -16,6 +16,7 @@ binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 0110
 
 
 /*-- PSEUDOCODE --*/
+
 
 
 // use RegEx to find spaces in between blocks of characters ? 

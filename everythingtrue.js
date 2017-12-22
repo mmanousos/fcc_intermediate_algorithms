@@ -1,4 +1,12 @@
 
+
+
+
+/*-- PSEUDOCODE --*/
+
+check array to see if each 1) contains the specified property key, and then 2) if the value of that property is truthy. 
+
+
 /*-- ASSIGNMENT --*/
 
 Everything Be True
