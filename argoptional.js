@@ -1,4 +1,41 @@
 
+/* satisifes all parts of assignment */ 
+
+function addTogether() {
+ if (arguments[0] != 'number') {
+  return undefined;
+ } else if ((arguments[1] != null) && (typeof arguments[1] == 'number')) {
+  var sum = arguments[0] + arguments[1];	
+  return sum;
+ } else if (arguments[1] == null) {
+  var value = arguments[0];
+  return function sumOnce(arg) {
+   if (typeof arg != 'number') {
+    return undefined;
+   } else {
+    var summed = value + arg;
+    return summed;
+   }
+  }; 
+ } 
+}
+
+
+addTogether(2,3);
+
+
+/* satisfies first part of assignment */
+
+function addTogether() {
+  if ((arguments[1] != null) && (typeof arguments[1] == 'number')) {
+	var sum = arguments[0] + arguments[1];	
+	return sum;
+  } 
+}
+
+addTogether(2,3);
+
+
 /*-- ASSIGNMENT --*/
 
 Arguments Optional
