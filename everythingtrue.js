@@ -1,3 +1,30 @@
+/* final draft solution */
+
+function truthCheck(collection, pre) {
+  for (var i = 0; i < collection.length; i++) { // cycle through entries in object
+  if (collection[i].hasOwnProperty(pre) !== true) { // if the object doesn't contain the property key defined in arguments[2]
+    return false; // return false
+   } else { // otherwise
+     var check = collection[i][pre]; // evaluate the value of the property
+     if ((check != true) && (typeof check == 'string') && (check.length > 0))  { // if it does not evaluate true and is a string, but not an empty string
+       var checkConvert = new Boolean([check]); // convert it to a boolean
+          if (checkConvert == true) { // then if it's true 
+              continue;     // continue to next element in object
+        } 
+     } else if (check == true) { // if check is true
+         continue;  // continue loop to next element in object
+     } else  { // otherwise, if it's not a true and not a string
+      return false; // return false
+    
+   } 
+  }
+  }
+  return true; // if all properties were true, return true
+}
+
+truthCheck([{"single": "double"}, {"single": NaN}], "single");
+
+
 
 
 
