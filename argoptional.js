@@ -3,19 +3,19 @@
 /* satisifes all parts of assignment */ 
 
 function addTogether() {
- if (typeof arguments[0] != 'number') {
-  return undefined;
- } else if ((arguments[1] != null) && (typeof arguments[1] == 'number')) {
-  var sum = arguments[0] + arguments[1];	
-  return sum;
- } else if (arguments[1] == null) {
-  var value = arguments[0];
-  return function sumOnce(arg) {
-   if (typeof arg != 'number') {
-    return undefined;
-   } else {
-    var summed = value + arg;
-    return summed;
+ if (typeof arguments[0] != 'number') { // check that the first argument is a number
+  return undefined; // otherwise return undefined
+ } else if ((arguments[1] != null) && (typeof arguments[1] == 'number')) { // check that there is more than one argument & that argument is a number
+  var sum = arguments[0] + arguments[1];	// if it is, add the two values together
+  return sum; // return the sum
+ } else if (arguments[1] == null) { // if there is no second argument
+  var value = arguments[0]; // set the single argument to a variable 'value'
+  return function sumOnce(arg) { // create a new function that looks for a single argument
+   if (typeof arg != 'number') { // check if that argument is also a number
+    return undefined; // if no, return undefined
+   } else { // if it is
+    var summed = value + arg; // add 'value' to the argument
+    return summed; // return the sum
    }
   }; 
  } 
